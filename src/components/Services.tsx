@@ -66,7 +66,7 @@ const SERVICES = [
       "CAT, John Deere, Komatsu — we handle glass replacement for excavators, loaders, and more on the job site.",
     image: "/assets/photos/20230620_071550.jpg",
     accent: "#f59e0b",
-    slug: null, // Keep without dynamic route or create one if needed
+    slug: "heavy-machinery",
   },
   {
     icon: Cpu,

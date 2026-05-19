@@ -74,6 +74,19 @@ export const VEHICLES = {
     description: "Experience quality with CBA Glass for your Tesla. Certified auto glass professionals, we specialize in precise and reliable glass replacement services for all Tesla models.",
     content: "Using only the highest-quality OEM-grade materials, CBA Glass ensures the structural integrity and safety features of your Tesla. We handle all ADAS calibration requirements to ensure your Autopilot features work flawlessly."
   },
+  "heavy-machinery": {
+    title: "Heavy Machinery",
+    slug: "heavy-machinery",
+    heroImage: "/assets/photos/20240426_173417.jpg",
+    images: [
+      "/assets/photos/20240426_173417.jpg",
+      "/assets/photos/20240320_144247.jpg",
+      "/assets/photos/20230620_071550.jpg",
+      "/assets/photos/heavy-duty-1.jpg",
+    ],
+    description: "CBA Glass specializes in glass replacement for heavy equipment and construction machinery. CAT, John Deere, Komatsu, and more — we come to your job site so the work doesn't stop.",
+    content: "Broken glass on heavy equipment is a safety hazard and a productivity killer. Our technicians are experienced with the unique glass requirements of excavators, loaders, bulldozers, forklifts, and agricultural equipment. We bring everything to your location — job site, yard, or facility — and get you back to work fast."
+  },
   luxury: {
     title: "Luxury & Exotic",
     slug: "luxury",
