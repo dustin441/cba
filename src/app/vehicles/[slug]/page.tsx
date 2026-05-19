@@ -38,7 +38,7 @@ export default async function VehiclePage({ params }: { params: Promise<{ slug: 
           </div>
 
           <div className="container" style={{ position: "relative", zIndex: 2 }}>
-            <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: "8px", color: "var(--accent-primary)", marginBottom: "var(--space-lg)", fontSize: "var(--text-sm)", fontWeight: 600 }} className="glass-hover" sx={{ padding: '8px 16px', borderRadius: 'var(--radius-full)' }}>
+            <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: "8px", color: "var(--accent-primary)", marginBottom: "var(--space-lg)", fontSize: "var(--text-sm)", fontWeight: 600, padding: '8px 16px', borderRadius: 'var(--radius-full)' }} className="glass-hover">
               <ArrowLeft size={16} /> Back to Home
             </Link>
             <h1 style={{ fontSize: "clamp(var(--text-4xl), 8vw, var(--text-7xl))", fontFamily: "var(--font-display)", fontWeight: 800, color: "var(--text-main)", marginBottom: "var(--space-md)", maxWidth: "900px" }}>
