@@ -51,7 +51,7 @@ export default function RootLayout({
         fontFamily: "var(--font-body)",
       }}
     >
-      <body>{children}</body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }
