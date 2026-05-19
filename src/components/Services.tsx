@@ -107,19 +107,14 @@ function ServiceCard({
 
   const Icon = service.icon;
 
-  const CardWrapper = service.slug ? Link : "div";
-  const wrapperProps = service.slug ? { href: `/vehicles/${service.slug}` } : {};
+  const sharedClassName = `${styles.card} ${visible ? styles.cardVisible : ""}`;
+  const sharedStyle = {
+    transitionDelay: `${index * 100}ms`,
+    ["--card-accent" as string]: service.accent,
+  } as React.CSSProperties;
 
-  return (
-    <CardWrapper
-      {...wrapperProps}
-      ref={ref}
-      className={`${styles.card} ${visible ? styles.cardVisible : ""}`}
-      style={{
-        transitionDelay: `${index * 100}ms`,
-        ["--card-accent" as string]: service.accent,
-      } as React.CSSProperties}
-    >
+  const inner = (
+    <>
       <div className={styles.cardImageWrap}>
         <Image
           src={service.image}
@@ -138,7 +133,26 @@ function ServiceCard({
         <h3 className={styles.cardTitle}>{service.title}</h3>
         <p className={styles.cardDescription}>{service.description}</p>
       </div>
-    </CardWrapper>
+    </>
+  );
+
+  if (service.slug) {
+    return (
+      <Link
+        href={`/vehicles/${service.slug}`}
+        ref={ref as React.RefObject<HTMLAnchorElement>}
+        className={sharedClassName}
+        style={sharedStyle}
+      >
+        {inner}
+      </Link>
+    );
+  }
+
+  return (
+    <div ref={ref} className={sharedClassName} style={sharedStyle}>
+      {inner}
+    </div>
   );
 }
 
