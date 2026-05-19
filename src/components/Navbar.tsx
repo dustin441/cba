@@ -2,14 +2,26 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Phone, Menu, X } from "lucide-react";
+import Link from "next/link";
+import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import styles from "./Navbar.module.css";
 
 const NAV_LINKS = [
-  { label: "Services", href: "#services" },
-  { label: "Our Work", href: "#gallery" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { 
+    label: "Vehicles & Services", 
+    href: "/#services",
+    dropdown: [
+      { label: "RV & Fleet Glass", href: "/vehicles/rv" },
+      { label: "Domestic Vehicles", href: "/vehicles/domestic" },
+      { label: "Foreign Vehicles", href: "/vehicles/foreign" },
+      { label: "Classic Cars", href: "/vehicles/classics" },
+      { label: "Tesla", href: "/vehicles/tesla" },
+      { label: "Luxury & Exotic", href: "/vehicles/luxury" },
+    ]
+  },
+  { label: "Our Work", href: "/#gallery" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -39,7 +51,7 @@ export default function Navbar() {
       id="navbar"
     >
       <nav className={styles.inner}>
-        <a href="#" className={styles.logo} aria-label="CBA Glass Home">
+        <Link href="/" className={styles.logo} aria-label="CBA Glass Home">
           <Image
             src="/assets/logos/CBALogo.png"
             alt="CBA Glass"
@@ -48,15 +60,25 @@ export default function Navbar() {
             priority
             className={styles.logoImg}
           />
-        </a>
+        </Link>
 
         {/* Desktop Links */}
         <ul className={styles.links}>
           {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <a href={link.href} className={styles.link}>
+            <li key={link.href} className={link.dropdown ? styles.hasDropdown : ""}>
+              <Link href={link.href} className={styles.link}>
                 {link.label}
-              </a>
+                {link.dropdown && <ChevronDown size={14} style={{ marginLeft: 4 }} />}
+              </Link>
+              {link.dropdown && (
+                <div className={styles.dropdown}>
+                  {link.dropdown.map((subItem) => (
+                    <Link key={subItem.href} href={subItem.href} className={styles.dropdownLink}>
+                      {subItem.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </li>
           ))}
         </ul>
@@ -83,14 +105,29 @@ export default function Navbar() {
       >
         <ul className={styles.mobileLinks}>
           {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <a
+            <li key={link.href} className={styles.mobileNavItem}>
+              <Link
                 href={link.href}
                 className={styles.mobileLink}
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
-              </a>
+              </Link>
+              {link.dropdown && (
+                <ul className={styles.mobileDropdown}>
+                  {link.dropdown.map((subItem) => (
+                    <li key={subItem.href}>
+                      <Link 
+                        href={subItem.href} 
+                        className={styles.mobileDropdownLink}
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {subItem.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </li>
           ))}
         </ul>

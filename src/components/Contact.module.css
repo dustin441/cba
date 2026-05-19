@@ -1,0 +1,194 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-5xl) 0;
+}
+
+.header {
+  margin-bottom: var(--space-3xl);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s var(--ease-out);
+}
+
+.gridVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Info Column */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.phoneCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-xl);
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.1), rgba(6, 182, 212, 0.05));
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  border-radius: var(--radius-xl);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.phoneCard:hover {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.15), rgba(6, 182, 212, 0.08));
+  border-color: rgba(34, 211, 238, 0.4);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.phoneCard:hover .phoneArrow {
+  transform: translateX(4px);
+}
+
+.phoneIcon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-accent);
+  border-radius: var(--radius-md);
+  color: var(--bg-deep);
+  flex-shrink: 0;
+}
+
+.phoneLabel {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.phoneNumber {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--accent-primary);
+}
+
+.phoneArrow {
+  margin-left: auto;
+  color: var(--accent-primary);
+  flex-shrink: 0;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.infoCards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.infoCard {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  color: var(--accent-primary);
+}
+
+.infoLabel {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  margin-bottom: 2px;
+}
+
+.infoValue {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding: var(--space-xl);
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.formLabel {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.formInput,
+.formTextarea {
+  width: 100%;
+  padding: var(--space-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  transition: all var(--duration-fast) var(--ease-out);
+  outline: none;
+}
+
+.formInput::placeholder,
+.formTextarea::placeholder {
+  color: var(--text-dim);
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: var(--space-lg);
+  font-size: var(--text-lg);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+}

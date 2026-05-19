@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Truck,
   Shield,
@@ -14,28 +15,40 @@ import styles from "./Services.module.css";
 
 const SERVICES = [
   {
-    icon: Car,
-    title: "Auto Glass",
-    description:
-      "Full windshield and window replacement for all domestic & foreign vehicles. Mobile service across the entire Valley.",
-    image: "/assets/photos/work-action-4.jpg",
-    accent: "var(--accent-primary)",
-  },
-  {
     icon: Truck,
     title: "RV & Fleet Glass",
     description:
       "Specialized RV windshield replacement — from Class A motorhomes to cargo vans. We come to you.",
-    image: "/assets/photos/rv-windshield.jpg",
+    image: "/assets/photos/10166.jpg",
     accent: "#818cf8",
+    slug: "rv",
   },
   {
-    icon: Wrench,
-    title: "Heavy Machinery",
+    icon: Car,
+    title: "Domestic Vehicles",
     description:
-      "CAT, John Deere, Komatsu — we handle glass replacement for excavators, loaders, and more on the job site.",
-    image: "/assets/photos/20230620_071550.jpg",
-    accent: "#f59e0b",
+      "Full windshield and window replacement for all domestic vehicles. Mobile service across the entire Valley.",
+    image: "/assets/photos/standard-5.jpg",
+    accent: "var(--accent-primary)",
+    slug: "domestic",
+  },
+  {
+    icon: Car,
+    title: "Foreign Vehicles",
+    description:
+      "Expert glass replacement for European, Asian, and other imported makes.",
+    image: "/assets/photos/standard-1.jpg",
+    accent: "#0ea5e9",
+    slug: "foreign",
+  },
+  {
+    icon: Landmark,
+    title: "Classic Cars",
+    description:
+      "Specialized glass restoration and replacement services for classic and vintage vehicles.",
+    image: "/assets/photos/shop-classic.jpg",
+    accent: "#d946ef",
+    slug: "classics",
   },
   {
     icon: Landmark,
@@ -44,22 +57,25 @@ const SERVICES = [
       "Ferrari, Porsche, Tesla, and more. Precision glass work for high-end vehicles that demand perfection.",
     image: "/assets/photos/ferrari-windshield.jpg",
     accent: "#f43f5e",
+    slug: "luxury",
+  },
+  {
+    icon: Wrench,
+    title: "Heavy Machinery",
+    description:
+      "CAT, John Deere, Komatsu — we handle glass replacement for excavators, loaders, and more on the job site.",
+    image: "/assets/photos/20230620_071550.jpg",
+    accent: "#f59e0b",
+    slug: null, // Keep without dynamic route or create one if needed
   },
   {
     icon: Cpu,
-    title: "ADAS Calibration",
+    title: "Tesla",
     description:
-      "Advanced Driver Assistance System calibration after windshield replacement. On-site mobile service available.",
-    image: "/assets/photos/work-action-5.jpg",
+      "Certified auto glass professionals specializing in precise glass replacement for all Tesla models.",
+    image: "/assets/photos/IMG_6765.jpg",
     accent: "#10b981",
-  },
-  {
-    icon: Shield,
-    title: "Insurance Claims",
-    description:
-      "We handle your insurance claim from start to finish. Network-affiliated, insurance-approved shop.",
-    image: "/assets/photos/work-action-6.jpg",
-    accent: "#6366f1",
+    slug: "tesla",
   },
 ];
 
@@ -91,14 +107,18 @@ function ServiceCard({
 
   const Icon = service.icon;
 
+  const CardWrapper = service.slug ? Link : "div";
+  const wrapperProps = service.slug ? { href: `/vehicles/${service.slug}` } : {};
+
   return (
-    <div
+    <CardWrapper
+      {...wrapperProps}
       ref={ref}
       className={`${styles.card} ${visible ? styles.cardVisible : ""}`}
       style={{
         transitionDelay: `${index * 100}ms`,
         ["--card-accent" as string]: service.accent,
-      }}
+      } as React.CSSProperties}
     >
       <div className={styles.cardImageWrap}>
         <Image
@@ -118,7 +138,7 @@ function ServiceCard({
         <h3 className={styles.cardTitle}>{service.title}</h3>
         <p className={styles.cardDescription}>{service.description}</p>
       </div>
-    </div>
+    </CardWrapper>
   );
 }
 

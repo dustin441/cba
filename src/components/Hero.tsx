@@ -28,8 +28,8 @@ export default function Hero() {
     <section className={styles.hero} ref={heroRef} id="hero">
       <div className={styles.bgWrap}>
         <Image
-          src="/assets/photos/20240426_173417.jpg"
-          alt="CBA Glass technician working on heavy machinery windshield"
+          src="/assets/photos/rv-windshield.jpg"
+          alt="CBA Glass technician working on an RV windshield"
           fill
           priority
           quality={90}
@@ -47,15 +47,12 @@ export default function Hero() {
         </div>
 
         <h1 className={styles.headline}>
-          OEM Quality Glass.
-          <br />
-          <span className="text-gradient">20+ Years of Precision.</span>
+          Valley's Premier <span className="text-gradient">RV & Auto Glass.</span>
         </h1>
 
         <p className={styles.subheadline}>
-          Premium mobile windshield replacement & repair across Phoenix, Buckeye,
-          and the entire Valley. Insurance-approved, lifetime warranty, same-day
-          service.
+          Specializing in Class A Motorhomes, RVs, and all vehicles across Phoenix, Buckeye, 
+          and the entire Valley. Premium mobile replacement, insurance-approved, with a lifetime warranty.
         </p>
 
         <div className={styles.ctas}>
