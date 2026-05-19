@@ -140,7 +140,7 @@ function ServiceCard({
     return (
       <Link
         href={`/vehicles/${service.slug}`}
-        ref={ref as React.RefObject<HTMLAnchorElement>}
+        ref={ref as unknown as React.RefObject<HTMLAnchorElement>}
         className={sharedClassName}
         style={sharedStyle}
       >
