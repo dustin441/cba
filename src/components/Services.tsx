@@ -73,7 +73,7 @@ const SERVICES = [
     title: "Tesla",
     description:
       "Certified auto glass professionals specializing in precise glass replacement for all Tesla models.",
-    image: "/assets/photos/IMG_6765.jpg",
+    image: "/assets/photos/PXL_20260218_175954265.jpg",
     accent: "#10b981",
     slug: "tesla",
   },

@@ -17,6 +17,7 @@ const NAV_LINKS = [
       { label: "Classic Cars", href: "/vehicles/classics" },
       { label: "Tesla", href: "/vehicles/tesla" },
       { label: "Luxury & Exotic", href: "/vehicles/luxury" },
+      { label: "Heavy Machinery", href: "/vehicles/heavy-machinery" },
     ]
   },
   { label: "Our Work", href: "/#gallery" },
