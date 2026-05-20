@@ -55,7 +55,7 @@ const SERVICES = [
     title: "Luxury & Exotic",
     description:
       "Ferrari, Porsche, Tesla, and more. Precision glass work for high-end vehicles that demand perfection.",
-    image: "/assets/photos/ferrari-windshield.jpg",
+    image: "/assets/photos/luxury-v2-1.jpg",
     accent: "#f43f5e",
     slug: "luxury",
   },
