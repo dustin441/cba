@@ -154,7 +154,6 @@ export const VEHICLES = {
       "/assets/photos/PXL_20260218_181243489.jpg",
       "/assets/photos/PXL_20260218_183844357.jpg",
       "/assets/photos/PXL_20260324_193112268.MP.jpg",
-      "/assets/photos/IMG_6765.jpg",
     ],
     description: "Experience quality with CBA Glass for your Tesla. Certified auto glass professionals, we specialize in precise and reliable glass replacement services for all Tesla models.",
     content: "Using only the highest-quality OEM-grade materials, CBA Glass ensures the structural integrity and safety features of your Tesla. We handle all ADAS calibration requirements to ensure your Autopilot features work flawlessly."
@@ -200,9 +199,6 @@ export const VEHICLES = {
       "/assets/photos/PXL_20260403_182532509.jpg",
       "/assets/photos/PXL_20260403_182550425.jpg",
       "/assets/photos/PXL_20260403_182555640.jpg",
-      "/assets/photos/luxury-1.jpg",
-      "/assets/photos/luxury-2.jpg",
-      "/assets/photos/luxury-3.jpg",
     ],
     description: "Precision glass work for high-end vehicles that demand perfection. We handle luxury and exotic cars with the utmost care and professionalism.",
     content: "When it comes to luxury and exotic vehicles like Ferrari, Porsche, and McLaren, standard glass replacement just won't do. We use strictly OEM glass and certified adhesives to ensure your vehicle is restored to its exact factory specifications."
