@@ -6,23 +6,38 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import styles from "./Gallery.module.css";
 
 const GALLERY_IMAGES = [
-  { src: "/assets/photos/ferrari-windshield.jpg", alt: "Ferrari windshield replacement in shop" },
-  { src: "/assets/site_images/IMG_6763.jpg", alt: "Recent windshield repair" },
-  { src: "/assets/photos/rv-windshield.jpg", alt: "RAM ProMaster windshield replacement" },
-  { src: "/assets/photos/10155.jpg", alt: "RV windshield installation in progress" },
-  { src: "/assets/photos/rv-new-2.jpg", alt: "RV glass repair completed" },
-  { src: "/assets/site_images/cqB0gezku3E-Lb-JpTXrX.png", alt: "Mobile glass installation" },
+  // Domestic
+  { src: "/assets/photos/PXL_20260309_183756857.jpg", alt: "Domestic vehicle windshield replacement" },
+  { src: "/assets/photos/PXL_20260309_190031810.jpg", alt: "Domestic auto glass service" },
+  { src: "/assets/photos/PXL_20260406_180917743.jpg", alt: "Windshield replacement on domestic vehicle" },
+  { src: "/assets/photos/PXL_20260318_212752861.jpg", alt: "Auto glass install" },
+  // Brand / shop
+  { src: "/assets/photos/PXL_20260113_005958782.jpg", alt: "CBA Glass shop" },
+  { src: "/assets/photos/e7a3ad69-49b9-4b5c-a495-29dc0893d2f9.jpg", alt: "CBA Glass team at work" },
+  { src: "/assets/photos/IMG_20260114_001547.jpg", alt: "CBA Glass mobile service" },
+  // Classics
+  { src: "/assets/photos/PXL_20260331_194816565.jpg", alt: "Classic car glass restoration" },
+  { src: "/assets/photos/PXL_20260311_162846316.jpg", alt: "Vintage windshield replacement" },
+  { src: "/assets/photos/PXL_20260401_022849437.jpg", alt: "Classic auto glass work" },
+  // Exotic / Luxury
+  { src: "/assets/photos/PXL_20260403_182528700.MP.jpg", alt: "Exotic vehicle windshield replacement" },
+  { src: "/assets/photos/PXL_20260403_181712830.jpg", alt: "Luxury car glass service" },
+  { src: "/assets/photos/PXL_20260403_182550425.jpg", alt: "High-end auto glass install" },
+  // Heavy Equipment
   { src: "/assets/photos/20240426_173417.jpg", alt: "CAT loader windshield replacement" },
   { src: "/assets/photos/IMG_4933.jpg", alt: "Heavy equipment glass service" },
-  { src: "/assets/photos/IMG_6255.jpg", alt: "Heavy machinery windshield repair" },
-  { src: "/assets/photos/20211014_171350.jpg", alt: "Construction equipment glass replacement" },
-  { src: "/assets/site_images/wjJc-AdzCfpKG74cZyD40.png", alt: "Windshield calibration" },
-  { src: "/assets/site_images/o2KLKxwu8TQF-ESTADUhA.png", alt: "Auto glass service" },
-  { src: "/assets/site_images/KnI73l22V4QsW968LmH9P.png", alt: "Precision glass install" },
-  { src: "/assets/site_images/lWT2LJst7iOaDReL-8MNQ.png", alt: "Mobile glass service" },
-  { src: "/assets/site_images/85y0Sp9WAEvsKXD_vFaUR.png", alt: "Completed installation" },
-  { src: "/assets/site_images/JlaZxOLtmWY4FRmACnoC8.png", alt: "Windshield replacement finish" },
-  { src: "/assets/site_images/SdXAO3MYrGy_YYILd01M4.png", alt: "Professional glass work" },
+  { src: "/assets/photos/PXL_20260210_232732642.jpg", alt: "Construction equipment windshield" },
+  { src: "/assets/photos/20211014_171350.jpg", alt: "Heavy machinery glass replacement" },
+  // RV
+  { src: "/assets/photos/rv-windshield.jpg", alt: "RAM ProMaster windshield replacement" },
+  { src: "/assets/photos/PXL_20260410_172801047.jpg", alt: "RV windshield installation" },
+  { src: "/assets/photos/PXL_20260127_182154599.jpg", alt: "RV glass repair" },
+  { src: "/assets/photos/PXL_20251229_195953195.jpg", alt: "RV windshield completed" },
+  { src: "/assets/photos/rv-new-2.jpg", alt: "RV glass repair completed" },
+  // Tesla
+  { src: "/assets/photos/PXL_20260218_175954265.jpg", alt: "Tesla windshield replacement" },
+  { src: "/assets/photos/PXL_20260218_181243489.jpg", alt: "Tesla glass service" },
+  { src: "/assets/photos/PXL_20260324_193112268.MP.jpg", alt: "Tesla auto glass install" },
 ];
 
 export default function Gallery() {
