@@ -23,6 +23,7 @@ const GALLERY_IMAGES = [
   { src: "/assets/photos/classics-v2-3.jpg", alt: "Vintage auto glass service" },
   { src: "/assets/photos/classics-v2-5.jpg", alt: "Classic vehicle glass restoration" },
   // Exotic / Luxury
+  { src: "/assets/photos/luxury-v2-1.jpg", alt: "Bentley windshield replacement" },
   { src: "/assets/photos/PXL_20260403_182528700.MP.jpg", alt: "Exotic vehicle windshield replacement" },
   { src: "/assets/photos/PXL_20260403_181712830.jpg", alt: "Luxury car glass service" },
   { src: "/assets/photos/PXL_20260403_182550425.jpg", alt: "High-end auto glass install" },

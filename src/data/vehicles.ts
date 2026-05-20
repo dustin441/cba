@@ -213,6 +213,9 @@ export const VEHICLES = {
       "/assets/photos/PXL_20260403_182532509.jpg",
       "/assets/photos/PXL_20260403_182550425.jpg",
       "/assets/photos/PXL_20260403_182555640.jpg",
+      "/assets/photos/luxury-v2-1.jpg",
+      "/assets/photos/luxury-v2-2.jpg",
+      "/assets/photos/luxury-v2-3.jpg",
     ],
     description: "Precision glass work for high-end vehicles that demand perfection. We handle luxury and exotic cars with the utmost care and professionalism.",
     content: "When it comes to luxury and exotic vehicles like Ferrari, Porsche, and McLaren, standard glass replacement just won't do. We use strictly OEM glass and certified adhesives to ensure your vehicle is restored to its exact factory specifications."
