@@ -223,9 +223,9 @@ export const VEHICLES = {
   adas: {
     title: "Mobile ADAS Calibration",
     slug: "adas",
-    heroImage: "/assets/photos/PXL_20260218_175954265.jpg",
+    heroImage: "/assets/photos/adas_calibration.png",
     images: [
-      "/assets/photos/PXL_20260218_175954265.jpg",
+      "/assets/photos/adas_calibration.png",
       "/assets/photos/PXL_20260218_175946959.MP.jpg",
       "/assets/photos/PXL_20260218_180415731.MP.jpg"
     ],
