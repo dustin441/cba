@@ -96,6 +96,36 @@ export default async function VehiclePage({ params }: { params: Promise<{ slug: 
           </div>
         </section>
 
+        {/* OEM Requirements Section */}
+        {"oemNotes" in vehicle && (
+          <section className="section-padding" style={{ background: "var(--bg-surface)", borderTop: "1px solid var(--glass-border)" }}>
+            <div className="container">
+              <div style={{ marginBottom: "var(--space-2xl)" }}>
+                <div className="section-label">OEM Requirements</div>
+                <h2 style={{ fontSize: "var(--text-4xl)", fontFamily: "var(--font-display)", color: "var(--text-main)", marginBottom: "var(--space-md)" }}>
+                  Manufacturer Calibration <span className="text-gradient">Guidelines</span>
+                </h2>
+                <p style={{ fontSize: "var(--text-lg)", color: "var(--text-muted)", maxWidth: "800px", lineHeight: 1.6 }}>
+                  Safety systems differ by manufacturer. Here is a breakdown of specific windshield calibration requirements from leading automakers that CBA Glass supports.
+                </p>
+              </div>
+
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "var(--space-lg)" }}>
+                {(vehicle.oemNotes as { brand: string; note: string }[]).map((item, idx) => (
+                  <div key={idx} className="glass" style={{ padding: "var(--space-xl)", display: "flex", flexDirection: "column", gap: "var(--space-sm)" }}>
+                    <h3 style={{ fontSize: "var(--text-lg)", fontFamily: "var(--font-display)", fontWeight: 700, color: "var(--accent-primary)" }}>
+                      {item.brand}
+                    </h3>
+                    <p style={{ fontSize: "var(--text-sm)", color: "var(--text-muted)", lineHeight: 1.6 }}>
+                      {item.note}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Gallery Section */}
         <section id="gallery" className="section-padding" style={{ background: "var(--bg-surface)" }}>
           <div className="container">

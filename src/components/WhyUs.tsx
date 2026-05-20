@@ -141,10 +141,10 @@ export default function WhyUs() {
           <div className={styles.insuranceContent}>
             <h3 className={styles.insuranceTitle}>
               <Shield size={32} color="#6366f1" />
-              Insurance Claims Made Easy
+              White-Glove Insurance Walkthrough
             </h3>
             <p className={styles.insuranceDesc}>
-              We handle your insurance claim from start to finish. As a network-affiliated, insurance-approved shop, we work directly with your provider to ensure a seamless and stress-free process for your glass replacement.
+              Filing an auto glass claim can be confusing. We don&apos;t just &ldquo;approve&rdquo; insurance — we walk you through the entire process. Our team will get on a three-way call with your provider, guide you through the claims questions step-by-step, and handle all the coordination directly with them. We make your glass replacement completely hands-off and stress-free, taking less than 10 minutes.
             </p>
           </div>
           <div className={styles.insuranceImageWrap}>

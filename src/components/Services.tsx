@@ -77,6 +77,15 @@ const SERVICES = [
     accent: "#10b981",
     slug: "tesla",
   },
+  {
+    icon: Cpu,
+    title: "Mobile ADAS Calibration",
+    description:
+      "Windshield camera calibration done in your driveway. Static and dynamic OEM procedures supported.",
+    image: "/assets/photos/PXL_20260218_175954265.jpg",
+    accent: "#6366f1",
+    slug: "adas",
+  },
 ];
 
 function ServiceCard({

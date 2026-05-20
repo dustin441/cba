@@ -219,5 +219,25 @@ export const VEHICLES = {
     ],
     description: "Precision glass work for high-end vehicles that demand perfection. We handle luxury and exotic cars with the utmost care and professionalism.",
     content: "When it comes to luxury and exotic vehicles like Ferrari, Porsche, and McLaren, standard glass replacement just won't do. We use strictly OEM glass and certified adhesives to ensure your vehicle is restored to its exact factory specifications."
+  },
+  adas: {
+    title: "Mobile ADAS Calibration",
+    slug: "adas",
+    heroImage: "/assets/photos/PXL_20260218_175954265.jpg",
+    images: [
+      "/assets/photos/PXL_20260218_175954265.jpg",
+      "/assets/photos/PXL_20260218_175946959.MP.jpg",
+      "/assets/photos/PXL_20260218_180415731.MP.jpg"
+    ],
+    description: "After windshield replacement, camera calibration is mandatory to ensure advanced driver assistance safety systems function correctly.",
+    content: "When a windshield is replaced, the front-facing safety camera mounted to the glass is disrupted. Even a 1mm misalignment can lead to critical sensor errors down the road. CBA Glass provides complete Mobile ADAS Calibration directly at your location. We carry out both static targets and dynamic road calibrations to ensure safety features like lane-assist and collision braking function flawlessly.",
+    oemNotes: [
+      { brand: "Tesla", note: "Requires specialized camera pitch/yaw calibration. Model S/3/X/Y require dynamic calibration driving sequence on clear road markings (typically 5-20 miles at speeds above 32 mph) or static target settings depending on software version." },
+      { brand: "Toyota / Lexus", note: "TSS (Toyota Safety Sense) cameras require static targets positioned at exact millimeter-level measurements in front of the vehicle, under controlled, glare-free lighting conditions." },
+      { brand: "Mazda", note: "FSC (Forward Sensing Camera) calibration is required after any windshield replacement or camera clip replacement, utilizing precise visual target setups." },
+      { brand: "Subaru", note: "Subaru EyeSight® dual-cameras are highly sensitive to glass curvature/thickness (OEM glass recommended) and require dual-target static calibration sweeps." },
+      { brand: "BMW", note: "KAFAS range cameras require precise calibration to coordinate lane-departure alerts and speed-limit sign recognition." },
+      { brand: "Hyundai / Kia", note: "Front view cameras require precise target sweeps or dynamic road calibration to synchronize steering angle and vehicle yaw rates." }
+    ]
   }
 };

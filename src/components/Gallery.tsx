@@ -3,48 +3,64 @@
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "./Gallery.module.css";
 
+const CATEGORIES = [
+  { id: "all", label: "All Work" },
+  { id: "rv", label: "RVs" },
+  { id: "tesla", label: "Teslas" },
+  { id: "luxury", label: "Luxury & Exotic" },
+  { id: "classics", label: "Classics" },
+  { id: "heavy-machinery", label: "Heavy Machinery" },
+  { id: "standard", label: "Cars & Trucks" },
+];
+
 const GALLERY_IMAGES = [
-  // Domestic
-  { src: "/assets/photos/PXL_20260309_183756857.jpg", alt: "Domestic vehicle windshield replacement" },
-  { src: "/assets/photos/PXL_20260309_190031810.jpg", alt: "Domestic auto glass service" },
-  { src: "/assets/photos/PXL_20260406_180917743.jpg", alt: "Windshield replacement on domestic vehicle" },
-  { src: "/assets/photos/PXL_20260318_212752861.jpg", alt: "Auto glass install" },
-  // Brand / shop
-  { src: "/assets/photos/PXL_20260113_005958782.jpg", alt: "CBA Glass shop" },
-  { src: "/assets/photos/e7a3ad69-49b9-4b5c-a495-29dc0893d2f9.jpg", alt: "CBA Glass team at work" },
-  { src: "/assets/photos/IMG_20260114_001547.jpg", alt: "CBA Glass mobile service" },
+  // Domestic / Standard
+  { src: "/assets/photos/PXL_20260309_183756857.jpg", alt: "Domestic vehicle windshield replacement", category: "standard" },
+  { src: "/assets/photos/PXL_20260309_190031810.jpg", alt: "Domestic auto glass service", category: "standard" },
+  { src: "/assets/photos/PXL_20260406_180917743.jpg", alt: "Windshield replacement on domestic vehicle", category: "standard" },
+  { src: "/assets/photos/PXL_20260318_212752861.jpg", alt: "Auto glass install", category: "standard" },
+  { src: "/assets/photos/PXL_20260113_005958782.jpg", alt: "CBA Glass shop", category: "standard" },
+  { src: "/assets/photos/e7a3ad69-49b9-4b5c-a495-29dc0893d2f9.jpg", alt: "CBA Glass team at work", category: "standard" },
+  { src: "/assets/photos/IMG_20260114_001547.jpg", alt: "CBA Glass mobile service", category: "standard" },
+  
   // Classics
-  { src: "/assets/photos/PXL_20260331_194816565.jpg", alt: "Classic car glass restoration" },
-  { src: "/assets/photos/PXL_20260311_162846316.jpg", alt: "Vintage windshield replacement" },
-  { src: "/assets/photos/PXL_20260401_022849437.jpg", alt: "Classic auto glass work" },
-  { src: "/assets/photos/classics-v2-1.jpg", alt: "Classic car windshield replacement" },
-  { src: "/assets/photos/classics-v2-3.jpg", alt: "Vintage auto glass service" },
-  { src: "/assets/photos/classics-v2-5.jpg", alt: "Classic vehicle glass restoration" },
+  { src: "/assets/photos/PXL_20260331_194816565.jpg", alt: "Classic car glass restoration", category: "classics" },
+  { src: "/assets/photos/PXL_20260311_162846316.jpg", alt: "Vintage windshield replacement", category: "classics" },
+  { src: "/assets/photos/PXL_20260401_022849437.jpg", alt: "Classic auto glass work", category: "classics" },
+  { src: "/assets/photos/classics-v2-1.jpg", alt: "Classic car windshield replacement", category: "classics" },
+  { src: "/assets/photos/classics-v2-3.jpg", alt: "Vintage auto glass service", category: "classics" },
+  { src: "/assets/photos/classics-v2-5.jpg", alt: "Classic vehicle glass restoration", category: "classics" },
+  
   // Exotic / Luxury
-  { src: "/assets/photos/luxury-v2-1.jpg", alt: "Bentley windshield replacement" },
-  { src: "/assets/photos/PXL_20260403_182528700.MP.jpg", alt: "Exotic vehicle windshield replacement" },
-  { src: "/assets/photos/PXL_20260403_181712830.jpg", alt: "Luxury car glass service" },
-  { src: "/assets/photos/PXL_20260403_182550425.jpg", alt: "High-end auto glass install" },
+  { src: "/assets/photos/luxury-v2-1.jpg", alt: "Bentley windshield replacement", category: "luxury" },
+  { src: "/assets/photos/PXL_20260403_182528700.MP.jpg", alt: "Exotic vehicle windshield replacement", category: "luxury" },
+  { src: "/assets/photos/PXL_20260403_181712830.jpg", alt: "Luxury car glass service", category: "luxury" },
+  { src: "/assets/photos/PXL_20260403_182550425.jpg", alt: "High-end auto glass install", category: "luxury" },
+  
   // Heavy Equipment
-  { src: "/assets/photos/20240426_173417.jpg", alt: "CAT loader windshield replacement" },
-  { src: "/assets/photos/IMG_4933.jpg", alt: "Heavy equipment glass service" },
-  { src: "/assets/photos/PXL_20260210_232732642.jpg", alt: "Construction equipment windshield" },
-  { src: "/assets/photos/20211014_171350.jpg", alt: "Heavy machinery glass replacement" },
+  { src: "/assets/photos/20240426_173417.jpg", alt: "CAT loader windshield replacement", category: "heavy-machinery" },
+  { src: "/assets/photos/IMG_4933.jpg", alt: "Heavy equipment glass service", category: "heavy-machinery" },
+  { src: "/assets/photos/PXL_20260210_232732642.jpg", alt: "Construction equipment windshield", category: "heavy-machinery" },
+  { src: "/assets/photos/20211014_171350.jpg", alt: "Heavy machinery glass replacement", category: "heavy-machinery" },
+  
   // RV
-  { src: "/assets/photos/rv-windshield.jpg", alt: "RAM ProMaster windshield replacement" },
-  { src: "/assets/photos/PXL_20260410_172801047.jpg", alt: "RV windshield installation" },
-  { src: "/assets/photos/PXL_20260127_182154599.jpg", alt: "RV glass repair" },
-  { src: "/assets/photos/PXL_20251229_195953195.jpg", alt: "RV windshield completed" },
-  { src: "/assets/photos/rv-new-2.jpg", alt: "RV glass repair completed" },
+  { src: "/assets/photos/rv-windshield.jpg", alt: "RAM ProMaster windshield replacement", category: "rv" },
+  { src: "/assets/photos/PXL_20260410_172801047.jpg", alt: "RV windshield installation", category: "rv" },
+  { src: "/assets/photos/PXL_20260127_182154599.jpg", alt: "RV glass repair", category: "rv" },
+  { src: "/assets/photos/PXL_20251229_195953195.jpg", alt: "RV windshield completed", category: "rv" },
+  { src: "/assets/photos/rv-new-2.jpg", alt: "RV glass repair completed", category: "rv" },
+  
   // Tesla
-  { src: "/assets/photos/PXL_20260218_175954265.jpg", alt: "Tesla windshield replacement" },
-  { src: "/assets/photos/PXL_20260218_181243489.jpg", alt: "Tesla glass service" },
-  { src: "/assets/photos/PXL_20260324_193112268.MP.jpg", alt: "Tesla auto glass install" },
+  { src: "/assets/photos/PXL_20260218_175954265.jpg", alt: "Tesla windshield replacement", category: "tesla" },
+  { src: "/assets/photos/PXL_20260218_181243489.jpg", alt: "Tesla glass service", category: "tesla" },
+  { src: "/assets/photos/PXL_20260324_193112268.MP.jpg", alt: "Tesla auto glass install", category: "tesla" },
 ];
 
 export default function Gallery() {
+  const [activeCategory, setActiveCategory] = useState("all");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
@@ -95,6 +111,10 @@ export default function Gallery() {
     return () => window.removeEventListener("keydown", handleKey);
   }, [lightboxIndex]);
 
+  const filteredImages = activeCategory === "all"
+    ? GALLERY_IMAGES
+    : GALLERY_IMAGES.filter((img) => img.category === activeCategory);
+
   return (
     <section
       className="section-padding"
@@ -113,30 +133,58 @@ export default function Gallery() {
           </p>
         </div>
 
-        <div className={`${styles.grid} ${visible ? styles.gridVisible : ""}`}>
-          {GALLERY_IMAGES.map((img, i) => (
+        {/* Filter Navigation */}
+        <div className={styles.filterBar}>
+          {CATEGORIES.map((cat) => (
             <button
-              key={img.src}
-              className={styles.tile}
-              style={{ animationDelay: `${i * 60}ms` }}
-              onClick={() => setLightboxIndex(i)}
-              aria-label={`View ${img.alt}`}
-              id={`gallery-image-${i}`}
+              key={cat.id}
+              className={`${styles.filterBtn} ${
+                activeCategory === cat.id ? styles.filterBtnActive : ""
+              }`}
+              onClick={() => setActiveCategory(cat.id)}
             >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                style={{ objectFit: "cover" }}
-                className={styles.tileImage}
-              />
-              <div className={styles.tileOverlay}>
-                <span className={styles.tileZoom}>View</span>
-              </div>
+              {cat.label}
             </button>
           ))}
         </div>
+
+        {/* Grid Wrapper */}
+        <motion.div 
+          layout 
+          className={`${styles.grid} ${visible ? styles.gridVisible : ""}`}
+        >
+          <AnimatePresence mode="popLayout">
+            {filteredImages.map((img) => {
+              const originalIndex = GALLERY_IMAGES.findIndex((item) => item.src === img.src);
+              return (
+                <motion.button
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.3 }}
+                  key={img.src}
+                  className={styles.tile}
+                  onClick={() => setLightboxIndex(originalIndex)}
+                  aria-label={`View ${img.alt}`}
+                  id={`gallery-image-${originalIndex}`}
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    style={{ objectFit: "cover" }}
+                    className={styles.tileImage}
+                  />
+                  <div className={styles.tileOverlay}>
+                    <span className={styles.tileZoom}>View</span>
+                  </div>
+                </motion.button>
+              );
+            })}
+          </AnimatePresence>
+        </motion.div>
       </div>
 
       {/* Lightbox */}

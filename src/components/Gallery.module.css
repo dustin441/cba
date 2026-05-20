@@ -9,24 +9,7 @@
   gap: var(--space-md);
 }
 
-.gridVisible .tile {
-  animation: tileIn 0.6s var(--ease-out) forwards;
-}
-
-/* Make certain tiles span 2 columns or rows for visual interest */
-.tile:nth-child(1) {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.tile:nth-child(5) {
-  grid-column: span 2;
-}
-
-.tile:nth-child(9) {
-  grid-row: span 2;
-}
-
+/* Grid items styling */
 .tile {
   position: relative;
   border-radius: var(--radius-md);
@@ -34,8 +17,6 @@
   border: 1px solid var(--glass-border);
   cursor: pointer;
   padding: 0;
-  opacity: 0;
-  transform: scale(0.95);
 }
 
 .tileImage {
@@ -218,4 +199,42 @@
   .lightboxNext {
     right: var(--space-sm);
   }
+}
+
+.filterBar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-2xl);
+  position: relative;
+  z-index: 10;
+}
+
+.filterBtn {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  color: var(--text-muted);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.filterBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--glass-border-hover);
+  color: var(--text-main);
+  transform: translateY(-1px);
+}
+
+.filterBtnActive {
+  background: var(--gradient-accent);
+  border-color: transparent;
+  color: var(--bg-deep);
+  box-shadow: 0 4px 15px rgba(34, 211, 238, 0.25);
 }
