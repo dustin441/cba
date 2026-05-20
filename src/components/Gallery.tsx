@@ -19,6 +19,9 @@ const GALLERY_IMAGES = [
   { src: "/assets/photos/PXL_20260331_194816565.jpg", alt: "Classic car glass restoration" },
   { src: "/assets/photos/PXL_20260311_162846316.jpg", alt: "Vintage windshield replacement" },
   { src: "/assets/photos/PXL_20260401_022849437.jpg", alt: "Classic auto glass work" },
+  { src: "/assets/photos/classics-v2-1.jpg", alt: "Classic car windshield replacement" },
+  { src: "/assets/photos/classics-v2-3.jpg", alt: "Vintage auto glass service" },
+  { src: "/assets/photos/classics-v2-5.jpg", alt: "Classic vehicle glass restoration" },
   // Exotic / Luxury
   { src: "/assets/photos/PXL_20260403_182528700.MP.jpg", alt: "Exotic vehicle windshield replacement" },
   { src: "/assets/photos/PXL_20260403_181712830.jpg", alt: "Luxury car glass service" },
