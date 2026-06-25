@@ -154,13 +154,12 @@ export const VEHICLES = {
   luxury: {
     title: "Luxury & Exotic",
     slug: "luxury",
-    heroImage: "/assets/photos/luxury-v2-1.jpg",
+    heroImage: "/assets/photos/PXL_20260403_181717698.jpg",
     images: [
-      "/assets/photos/luxury-v2-1.jpg",
+      "/assets/photos/PXL_20260403_181717698.jpg",
+      "/assets/photos/PXL_20260403_182550425.jpg",
       "/assets/photos/PXL_20260403_181712830.jpg",
       "/assets/photos/PXL_20260403_182528700.MP.jpg",
-      "/assets/photos/PXL_20260403_182550425.jpg",
-      "/assets/photos/luxury-v2-2.jpg",
       "/assets/photos/luxury-v2-3.jpg",
     ],
     description: "Precision glass work for high-end vehicles that demand perfection. We handle luxury and exotic cars with the utmost care and professionalism.",

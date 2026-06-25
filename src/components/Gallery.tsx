@@ -70,9 +70,9 @@ const GALLERY_IMAGES = [
   { src: "/assets/photos/classics-v2-5.jpg", alt: "Classic vehicle glass restoration", category: "classics" },
   
   // Exotic / Luxury
-  { src: "/assets/photos/luxury-v2-1.jpg", alt: "Bentley windshield replacement", category: "luxury" },
-  { src: "/assets/photos/PXL_20260403_182528700.MP.jpg", alt: "Exotic vehicle windshield replacement", category: "luxury" },
-  { src: "/assets/photos/PXL_20260403_181712830.jpg", alt: "Luxury car glass service", category: "luxury" },
+  { src: "/assets/photos/luxury-v2-3.jpg", alt: "Bentley windshield replacement", category: "luxury" },
+  { src: "/assets/photos/PXL_20260403_181717698.jpg", alt: "Ferrari windshield replacement", category: "luxury" },
+  { src: "/assets/photos/PXL_20260403_181712830.jpg", alt: "Ferrari glass service", category: "luxury" },
   { src: "/assets/photos/PXL_20260403_182550425.jpg", alt: "High-end auto glass install", category: "luxury" },
   
   // Heavy Equipment
