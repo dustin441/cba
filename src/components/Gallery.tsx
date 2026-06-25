@@ -52,6 +52,14 @@ const GALLERY_IMAGES = [
   { src: "/assets/photos/email-gallery-20250415_110050.jpg", alt: "CBA Glass recent windshield and auto glass project", category: "standard" },
   { src: "/assets/photos/email-gallery-20250415_110047.jpg", alt: "CBA Glass recent windshield and auto glass project", category: "standard" },
   { src: "/assets/photos/email-gallery-20250415_110042.jpg", alt: "CBA Glass recent windshield and auto glass project", category: "standard" },
+  { src: "/assets/photos/gmail-recent-pxl_20250923_185802835.jpg", alt: "CBA Glass recent windshield and auto glass project", category: "standard" },
+  { src: "/assets/photos/gmail-recent-pxl_20251031_141815895.jpg", alt: "CBA Glass recent windshield and auto glass project", category: "standard" },
+  { src: "/assets/photos/gmail-recent-fb_img_1747355460039.jpg", alt: "CBA Glass recent windshield and auto glass project", category: "standard" },
+  { src: "/assets/photos/gmail-recent-pxl_20251031_142321187.jpg", alt: "CBA Glass recent windshield and auto glass project", category: "standard" },
+  { src: "/assets/photos/gmail-recent-pxl_20251031_144922497.jpg", alt: "CBA Glass recent windshield and auto glass project", category: "standard" },
+  { src: "/assets/photos/gmail-recent-img_20250920_084021.jpg", alt: "CBA Glass recent windshield and auto glass project", category: "standard" },
+  { src: "/assets/photos/gmail-recent-pxl_20251031_141818252.jpg", alt: "CBA Glass recent windshield and auto glass project", category: "standard" },
+  { src: "/assets/photos/gmail-recent-pxl_20251020_185711682-mp.jpg", alt: "CBA Glass recent windshield and auto glass project", category: "standard" },
   
   // Classics
   { src: "/assets/photos/PXL_20260331_194816565.jpg", alt: "Classic car glass restoration", category: "classics" },
@@ -72,6 +80,10 @@ const GALLERY_IMAGES = [
   { src: "/assets/photos/IMG_4933.jpg", alt: "Heavy equipment glass service", category: "heavy-machinery" },
   { src: "/assets/photos/PXL_20260210_232732642.jpg", alt: "Construction equipment windshield", category: "heavy-machinery" },
   { src: "/assets/photos/20211014_171350.jpg", alt: "Heavy machinery glass replacement", category: "heavy-machinery" },
+  { src: "/assets/photos/gmail-heavy-1000042061.jpg", alt: "CBA Glass heavy equipment glass project", category: "heavy-machinery" },
+  { src: "/assets/photos/gmail-heavy-1000042057.jpg", alt: "CBA Glass heavy equipment glass project", category: "heavy-machinery" },
+  { src: "/assets/photos/gmail-heavy-1000042058.jpg", alt: "CBA Glass heavy equipment glass project", category: "heavy-machinery" },
+  { src: "/assets/photos/gmail-heavy-1000042060.jpg", alt: "CBA Glass heavy equipment glass project", category: "heavy-machinery" },
   
   // RV
   { src: "/assets/photos/rv-windshield.jpg", alt: "RAM ProMaster windshield replacement", category: "rv" },
