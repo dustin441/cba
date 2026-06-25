@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   Truck,
-  Shield,
   Wrench,
   Car,
   Cpu,
@@ -25,9 +24,9 @@ const SERVICES = [
   },
   {
     icon: Car,
-    title: "Domestic Vehicles",
+    title: "Passenger Vehicles",
     description:
-      "Full windshield and window replacement for all domestic vehicles. Mobile service across the entire Valley.",
+      "Full windshield and window replacement for cars, trucks, SUVs, and daily drivers. Mobile service across the entire Valley.",
     image: "/assets/photos/standard-5.jpg",
     accent: "var(--accent-primary)",
     slug: "domestic",

@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import Image from "next/image";
 import {
   Phone,
   Mail,
@@ -123,13 +122,13 @@ export default function Contact() {
         <div className={`${styles.grid} ${visible ? styles.gridVisible : ""}`}>
           {/* Info Column */}
           <div className={styles.info}>
-            <a href="tel:6234714064" className={styles.phoneCard}>
+            <a href="tel:6232171310" className={styles.phoneCard}>
               <div className={styles.phoneIcon}>
                 <Phone size={28} />
               </div>
               <div>
                 <p className={styles.phoneLabel}>Call or Text</p>
-                <p className={styles.phoneNumber}>(623) 471-4064</p>
+                <p className={styles.phoneNumber}>(623) 217-1310</p>
               </div>
               <ArrowRight size={20} className={styles.phoneArrow} />
             </a>
@@ -140,10 +139,10 @@ export default function Contact() {
                 <div>
                   <p className={styles.infoLabel}>Email</p>
                   <a
-                    href="mailto:cbaautoglass@gmail.com"
+                    href="mailto:cbaglass@gmail.com"
                     className={styles.infoValue}
                   >
-                    cbaautoglass@gmail.com
+                    cbaglass@gmail.com
                   </a>
                 </div>
               </div>

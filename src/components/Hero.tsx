@@ -47,7 +47,7 @@ export default function Hero() {
         </div>
 
         <h1 className={styles.headline}>
-          Valley's Premier <span className="text-gradient">RV & Auto Glass.</span>
+          Valley&apos;s Premier <span className="text-gradient">RV & Auto Glass.</span>
         </h1>
 
         <p className={styles.subheadline}>
@@ -60,7 +60,7 @@ export default function Hero() {
             Get a Free Quote
             <ArrowRight size={18} />
           </a>
-          <a href="tel:6234714064" className="btn-secondary">
+          <a href="tel:6232171310" className="btn-secondary">
             <Phone size={18} />
             Call Now
           </a>

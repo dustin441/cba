@@ -13,7 +13,7 @@ const NAV_LINKS = [
     dropdown: [
       { label: "RV & Fleet Glass", href: "/vehicles/rv" },
       { label: "Mobile ADAS Calibration", href: "/vehicles/adas" },
-      { label: "Domestic Vehicles", href: "/vehicles/domestic" },
+      { label: "Passenger Vehicles", href: "/vehicles/domestic" },
       { label: "Foreign Vehicles", href: "/vehicles/foreign" },
       { label: "Classic Cars", href: "/vehicles/classics" },
       { label: "Tesla", href: "/vehicles/tesla" },
@@ -22,6 +22,7 @@ const NAV_LINKS = [
     ]
   },
   { label: "Our Work", href: "/#gallery" },
+  { label: "FAQ", href: "/#faq" },
   { label: "About", href: "/#about" },
   { label: "Contact", href: "/#contact" },
 ];
@@ -86,9 +87,9 @@ export default function Navbar() {
         </ul>
 
         <div className={styles.actions}>
-          <a href="tel:6234714064" className={`btn-primary ${styles.cta}`}>
+          <a href="tel:6232171310" className={`btn-primary ${styles.cta}`}>
             <Phone size={16} />
-            <span>(623) 471-4064</span>
+            <span>(623) 217-1310</span>
           </a>
           <button
             className={styles.burger}
@@ -134,12 +135,12 @@ export default function Navbar() {
           ))}
         </ul>
         <a
-          href="tel:6234714064"
+          href="tel:6232171310"
           className="btn-primary"
           style={{ width: "100%", marginTop: "1rem" }}
         >
           <Phone size={18} />
-          Call Now — (623) 471-4064
+          Call Now — (623) 217-1310
         </a>
       </div>
     </header>

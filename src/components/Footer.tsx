@@ -26,7 +26,7 @@ export default function Footer() {
             <h4 className={styles.colTitle}>Vehicles</h4>
             <ul className={styles.colLinks}>
               <li><Link href="/vehicles/rv">RV & Fleet Glass</Link></li>
-              <li><Link href="/vehicles/domestic">Domestic Vehicles</Link></li>
+              <li><Link href="/vehicles/domestic">Passenger Vehicles</Link></li>
               <li><Link href="/vehicles/foreign">Foreign Vehicles</Link></li>
               <li><Link href="/vehicles/classics">Classic Cars</Link></li>
               <li><Link href="/vehicles/tesla">Tesla</Link></li>
@@ -39,11 +39,11 @@ export default function Footer() {
             <ul className={styles.colContact}>
               <li>
                 <Phone size={14} />
-                <a href="tel:6234714064">(623) 471-4064</a>
+                <a href="tel:6232171310">(623) 217-1310</a>
               </li>
               <li>
                 <Mail size={14} />
-                <a href="mailto:cbaautoglass@gmail.com">cbaautoglass@gmail.com</a>
+                <a href="mailto:cbaglass@gmail.com">cbaglass@gmail.com</a>
               </li>
               <li>
                 <MapPin size={14} />
