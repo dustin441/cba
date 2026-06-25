@@ -334,6 +334,42 @@
 }
 
 @media (max-width: 600px) {
+  .section {
+    padding: var(--space-3xl) 0;
+  }
+
+  .form {
+    padding: var(--space-lg) var(--space-md);
+    border-radius: var(--radius-lg);
+  }
+
+  .phoneCard {
+    gap: var(--space-md);
+    padding: var(--space-lg);
+  }
+
+  .phoneIcon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .phoneNumber {
+    font-size: var(--text-xl);
+  }
+
+  .phoneArrow {
+    display: none;
+  }
+
+  .wizardHeader {
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .navButtons {
+    flex-direction: column-reverse;
+  }
+
   .optionGrid {
     grid-template-columns: 1fr;
   }

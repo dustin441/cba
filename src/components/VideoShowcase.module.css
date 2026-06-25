@@ -1,0 +1,136 @@
+.section {
+  position: relative;
+  padding: var(--space-5xl) 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(34, 211, 238, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(2, 6, 23, 0.2) 0%, rgba(10, 22, 40, 0.58) 50%, rgba(2, 6, 23, 0.2) 100%);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.copy {
+  max-width: 560px;
+}
+
+.highlights {
+  display: grid;
+  gap: var(--space-md);
+  margin: var(--space-2xl) 0;
+}
+
+.highlight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.highlightIcon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  color: var(--accent-primary);
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  box-shadow: 0 0 22px rgba(34, 211, 238, 0.08);
+}
+
+.videoCard {
+  position: relative;
+  border-radius: calc(var(--radius-xl) + 0.35rem);
+  padding: clamp(0.5rem, 1.5vw, 0.85rem);
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.36), rgba(255, 255, 255, 0.08) 45%, rgba(6, 182, 212, 0.16));
+  box-shadow: var(--shadow-elevated), 0 0 60px rgba(34, 211, 238, 0.12);
+}
+
+.videoFrame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: #020617;
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  background: #020617;
+}
+
+.playBadge {
+  position: absolute;
+  left: var(--space-lg);
+  bottom: var(--space-lg);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-full);
+  background: rgba(2, 6, 23, 0.72);
+  color: var(--text-main);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  pointer-events: none;
+}
+
+@media (max-width: 980px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .copy {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-3xl) 0;
+  }
+
+  .highlights {
+    margin: var(--space-xl) 0;
+  }
+
+  .videoCard {
+    border-radius: var(--radius-xl);
+    padding: 0.45rem;
+  }
+
+  .playBadge {
+    left: var(--space-sm);
+    bottom: var(--space-sm);
+    max-width: calc(100% - 1rem);
+    font-size: var(--text-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .videoFrame {
+    aspect-ratio: 4 / 5;
+  }
+
+  .highlight {
+    align-items: flex-start;
+    font-size: var(--text-sm);
+  }
+}

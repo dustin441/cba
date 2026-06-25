@@ -238,3 +238,32 @@
   color: var(--bg-deep);
   box-shadow: 0 4px 15px rgba(34, 211, 238, 0.25);
 }
+
+@media (max-width: 480px) {
+  .grid {
+    gap: var(--space-sm);
+    grid-auto-rows: 135px;
+  }
+
+  .filterBar {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: var(--space-sm);
+    margin-left: calc(var(--space-md) * -1);
+    margin-right: calc(var(--space-md) * -1);
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+    scroll-snap-type: x proximity;
+  }
+
+  .filterBtn {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .tileZoom {
+    display: none;
+  }
+}
