@@ -134,14 +134,23 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-        <a
-          href="tel:6232171310"
-          className="btn-primary"
-          style={{ width: "100%", marginTop: "1rem" }}
-        >
-          <Phone size={18} />
-          Call Now — (623) 217-1310
-        </a>
+        <div className={styles.mobileActions}>
+          <Link
+            href="/#contact"
+            className={`btn-primary ${styles.mobileActionBtn}`}
+            onClick={() => setMobileOpen(false)}
+          >
+            Get a Free Quote
+          </Link>
+          <a
+            href="tel:6232171310"
+            className={`btn-secondary ${styles.mobileActionBtn}`}
+            onClick={() => setMobileOpen(false)}
+          >
+            <Phone size={18} />
+            Call Now
+          </a>
+        </div>
       </div>
     </header>
   );

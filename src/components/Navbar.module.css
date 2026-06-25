@@ -202,6 +202,19 @@
   color: var(--accent-primary);
 }
 
+.mobileActions {
+  width: min(100%, 360px);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-2xl);
+}
+
+.mobileActionBtn {
+  width: 100%;
+  min-height: 52px;
+}
+
 @media (max-width: 900px) {
   .links {
     display: none;
@@ -231,5 +244,9 @@
 
   .mobileDropdownLink {
     font-size: var(--text-base);
+  }
+
+  .mobileActions {
+    margin-top: var(--space-xl);
   }
 }
