@@ -45,6 +45,8 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -70,19 +72,41 @@ export default function Contact() {
     if (step > 1) setStep(step - 1);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate API call
-    console.log("Form Submitted:", {
-      vehicle: `${year} ${make} ${model}`,
-      billingType,
-      insuranceProvider: billingType === "insurance" ? insuranceProvider : "N/A",
-      name,
-      phone,
-      email,
-      message,
-    });
-    setIsSubmitted(true);
+    setSubmitError("");
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          year,
+          make,
+          model,
+          billingType,
+          insuranceProvider: billingType === "insurance" ? insuranceProvider : "",
+          name,
+          phone,
+          email,
+          message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Quote request failed");
+      }
+
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error("Quote request failed", error);
+      setSubmitError(
+        "We couldn't submit your request online. Please call or text (623) 217-1310 and we'll help right away."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Helper validation functions
@@ -199,6 +223,7 @@ export default function Contact() {
                     setPhone("");
                     setEmail("");
                     setMessage("");
+                    setSubmitError("");
                     setIsSubmitted(false);
                   }}
                   className="btn-primary"
@@ -461,21 +486,28 @@ export default function Contact() {
                           />
                         </div>
 
+                        {submitError && (
+                          <p className={styles.submitError} role="alert">
+                            {submitError}
+                          </p>
+                        )}
+
                         <div className={styles.navButtons}>
                           <button
                             type="button"
                             onClick={handlePrev}
                             className="btn-secondary"
+                            disabled={isSubmitting}
                           >
                             Back
                           </button>
                           <button
                             type="submit"
-                            disabled={!isStep3Valid}
+                            disabled={!isStep3Valid || isSubmitting}
                             className={`btn-primary ${styles.submitBtn}`}
                           >
                             <Send size={16} />
-                            Get My Quote
+                            {isSubmitting ? "Submitting..." : "Get My Quote"}
                           </button>
                         </div>
                       </motion.div>
