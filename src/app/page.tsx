@@ -9,6 +9,7 @@ import FAQ from "@/components/FAQ";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import QuotePopup from "@/components/QuotePopup";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <Testimonials />
         <Contact />
       </main>
+      <QuotePopup />
       <Footer />
     </>
   );
