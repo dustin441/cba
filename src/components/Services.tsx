@@ -15,9 +15,9 @@ import styles from "./Services.module.css";
 const SERVICES = [
   {
     icon: Truck,
-    title: "RV & Fleet Glass",
+    title: "RV Glass",
     description:
-      "Specialized RV windshield replacement — from Class A motorhomes to cargo vans. We come to you.",
+      "Specialized RV windshield replacement — from Class A motorhomes to coaches. We come to you.",
     image: "/assets/photos/10166.jpg",
     accent: "#818cf8",
     slug: "rv",

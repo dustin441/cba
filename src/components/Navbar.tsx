@@ -11,7 +11,7 @@ const NAV_LINKS = [
     label: "Vehicles & Services", 
     href: "/#services",
     dropdown: [
-      { label: "RV & Fleet Glass", href: "/vehicles/rv" },
+      { label: "RV Glass", href: "/vehicles/rv" },
       { label: "Mobile ADAS Calibration", href: "/vehicles/adas" },
       { label: "Passenger Vehicles", href: "/vehicles/domestic" },
       { label: "Foreign Vehicles", href: "/vehicles/foreign" },

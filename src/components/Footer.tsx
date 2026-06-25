@@ -18,14 +18,14 @@ export default function Footer() {
             />
             <p className={styles.tagline}>
               Premium mobile auto glass replacement across the Phoenix Valley.
-              OEM quality, lifetime warranty, 20+ years of expertise.
+              OEM quality, lifetime warranty, 30+ years of expertise.
             </p>
           </div>
 
           <div className={styles.col}>
             <h4 className={styles.colTitle}>Vehicles</h4>
             <ul className={styles.colLinks}>
-              <li><Link href="/vehicles/rv">RV & Fleet Glass</Link></li>
+              <li><Link href="/vehicles/rv">RV Glass</Link></li>
               <li><Link href="/vehicles/domestic">Passenger Vehicles</Link></li>
               <li><Link href="/vehicles/foreign">Foreign Vehicles</Link></li>
               <li><Link href="/vehicles/classics">Classic Cars</Link></li>

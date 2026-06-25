@@ -34,9 +34,9 @@ const FEATURES = [
   },
   {
     icon: Award,
-    title: "20+ Years Experience",
+    title: "30+ Years Experience",
     description:
-      "Two decades of hands-on expertise. From daily drivers to exotic supercars, we've done it all.",
+      "Three decades of hands-on expertise. From daily drivers to exotic supercars, we've done it all.",
   },
   {
     icon: BadgeCheck,

@@ -68,7 +68,7 @@ export default function Hero() {
 
         <div className={styles.stats}>
           <div className={styles.stat}>
-            <span className={styles.statValue}>20+</span>
+            <span className={styles.statValue}>30+</span>
             <span className={styles.statLabel}>Years Experience</span>
           </div>
           <div className={styles.statDivider} />

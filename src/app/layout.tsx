@@ -15,7 +15,7 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "CBA Glass | Premium Mobile Auto Glass Replacement — Buckeye & Phoenix AZ",
   description:
-    "OEM-quality mobile windshield replacement across Phoenix, Buckeye & the Valley. 20+ years experience, insurance-approved, lifetime warranty. Specializing in luxury, RV, & heavy machinery glass.",
+    "OEM-quality mobile windshield replacement across Phoenix, Buckeye & the Valley. 30+ years experience, insurance-approved, lifetime warranty. Specializing in luxury, RV, & heavy machinery glass.",
   keywords: [
     "windshield replacement",
     "auto glass repair",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CBA Glass | Premium Mobile Auto Glass Replacement",
     description:
-      "OEM-quality mobile windshield replacement across Phoenix & the Valley. 20+ years experience, insurance-approved, lifetime warranty.",
+      "OEM-quality mobile windshield replacement across Phoenix & the Valley. 30+ years experience, insurance-approved, lifetime warranty.",
     type: "website",
     locale: "en_US",
     url: "https://cbaglass.com",
