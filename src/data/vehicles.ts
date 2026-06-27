@@ -168,9 +168,11 @@ export const VEHICLES = {
   adas: {
     title: "Mobile ADAS Calibration",
     slug: "adas",
-    heroImage: "/assets/photos/adas_calibration.png",
+    heroImage: "/assets/photos/adas-mobile-calibration-1.jpg",
     images: [
-      "/assets/photos/adas_calibration.png",
+      "/assets/photos/adas-mobile-calibration-1.jpg",
+      "/assets/photos/adas-mobile-calibration-2.jpg",
+      "/assets/photos/adas-mobile-calibration-3.jpg",
     ],
     description: "After windshield replacement, camera calibration is mandatory to ensure advanced driver assistance safety systems function correctly.",
     content: "When a windshield is replaced, the front-facing safety camera mounted to the glass is disrupted. Even a 1mm misalignment can lead to critical sensor errors down the road. CBA Glass provides complete Mobile ADAS Calibration directly at your location. We carry out both static targets and dynamic road calibrations to ensure safety features like lane-assist and collision braking function flawlessly.",
