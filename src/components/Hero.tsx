@@ -28,8 +28,8 @@ export default function Hero() {
     <section className={styles.hero} ref={heroRef} id="hero">
       <div className={styles.bgWrap}>
         <Image
-          src="/assets/photos/rv-windshield.jpg"
-          alt="CBA Glass technician working on an RV windshield"
+          src="/assets/photos/10166.jpg"
+          alt="CBA Glass Class A motorhome windshield service"
           fill
           priority
           quality={90}
