@@ -79,6 +79,8 @@ const GALLERY_IMAGES = [
   { src: "/assets/photos/classics-v2-5.jpg", alt: "Classic vehicle glass restoration", category: "classics" },
   
   // Exotic / Luxury
+  { src: "/assets/photos/standard-1.jpg", alt: "Mercedes-Benz windshield service", category: "luxury" },
+  { src: "/assets/photos/standard-2.jpg", alt: "European exotic vehicle glass service", category: "luxury" },
   { src: "/assets/photos/luxury-v2-3.jpg", alt: "Bentley windshield replacement", category: "luxury" },
   { src: "/assets/photos/PXL_20260403_181717698.jpg", alt: "Ferrari windshield replacement", category: "luxury" },
   { src: "/assets/photos/PXL_20260403_181712830.jpg", alt: "Ferrari glass service", category: "luxury" },

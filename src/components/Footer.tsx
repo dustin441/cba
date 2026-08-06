@@ -27,7 +27,6 @@ export default function Footer() {
             <ul className={styles.colLinks}>
               <li><Link href="/vehicles/rv">RV Glass</Link></li>
               <li><Link href="/vehicles/domestic">Passenger Vehicles</Link></li>
-              <li><Link href="/vehicles/foreign">Foreign Vehicles</Link></li>
               <li><Link href="/vehicles/classics">Classic Cars</Link></li>
               <li><Link href="/vehicles/tesla">Tesla</Link></li>
               <li><Link href="/vehicles/luxury">Luxury & Exotic</Link></li>

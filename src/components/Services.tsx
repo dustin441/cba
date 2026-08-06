@@ -32,15 +32,6 @@ const SERVICES = [
     slug: "domestic",
   },
   {
-    icon: Car,
-    title: "Foreign Vehicles",
-    description:
-      "Expert glass replacement for European, Asian, and other imported makes.",
-    image: "/assets/photos/standard-1.jpg",
-    accent: "#0ea5e9",
-    slug: "foreign",
-  },
-  {
     icon: Landmark,
     title: "Classic Cars",
     description:

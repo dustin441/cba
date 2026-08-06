@@ -25,17 +25,6 @@ export const VEHICLES = {
     description: "For passenger vehicles that demand exceptional care, choose CBA Glass. Our certified technicians provide top-notch windshield and glass replacement services for cars, trucks, SUVs, and daily drivers.",
     content: "From work trucks to family SUVs and commuter sedans, CBA Glass ensures your vehicle receives high-quality OEM-grade materials. As an insurance-approved shop, we simplify the claim process."
   },
-  foreign: {
-    title: "Foreign Vehicles",
-    slug: "foreign",
-    heroImage: "/assets/photos/standard-1.jpg",
-    images: [
-      "/assets/photos/standard-1.jpg",
-      "/assets/photos/standard-2.jpg"
-    ],
-    description: "Expert glass replacement for all foreign and import vehicles. Our technicians bring years of specialized experience to ensure precise fit and finish for European, Asian, and other imported makes.",
-    content: "We source the highest quality OEM-equivalent glass for foreign vehicles to maintain the safety, structural integrity, and advanced sensor calibration (ADAS) of your car."
-  },
   rv: {
     title: "RV Windshield Repair",
     slug: "rv",
@@ -180,6 +169,8 @@ export const VEHICLES = {
       "/assets/photos/PXL_20260403_181712830.jpg",
       "/assets/photos/PXL_20260403_182528700.MP.jpg",
       "/assets/photos/luxury-v2-3.jpg",
+      "/assets/photos/standard-1.jpg",
+      "/assets/photos/standard-2.jpg",
     ],
     description: "Precision glass work for high-end vehicles that demand perfection. We handle luxury and exotic cars with the utmost care and professionalism.",
     content: "When it comes to luxury and exotic vehicles like Ferrari, Porsche, and McLaren, standard glass replacement just won't do. We use strictly OEM glass and certified adhesives to ensure your vehicle is restored to its exact factory specifications."

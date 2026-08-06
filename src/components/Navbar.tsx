@@ -14,7 +14,6 @@ const NAV_LINKS = [
       { label: "RV Glass", href: "/vehicles/rv" },
       { label: "Mobile ADAS Calibration", href: "/vehicles/adas" },
       { label: "Passenger Vehicles", href: "/vehicles/domestic" },
-      { label: "Foreign Vehicles", href: "/vehicles/foreign" },
       { label: "Classic Cars", href: "/vehicles/classics" },
       { label: "Tesla", href: "/vehicles/tesla" },
       { label: "Luxury & Exotic", href: "/vehicles/luxury" },
