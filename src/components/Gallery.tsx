@@ -60,7 +60,7 @@ const GALLERY_IMAGES = [
   { src: "/assets/photos/gmail-recent-pxl_20251031_144922497.jpg", alt: "Heavy equipment glass project", category: "heavy-machinery" },
   { src: "/assets/photos/gmail-recent-img_20250920_084021.jpg", alt: "Heavy equipment glass project", category: "heavy-machinery" },
   { src: "/assets/photos/gmail-recent-pxl_20251031_141818252.jpg", alt: "Heavy equipment glass project", category: "heavy-machinery" },
-  { src: "/assets/photos/gmail-recent-pxl_20251020_185711682-mp.jpg", alt: "CBA Glass recent windshield and auto glass project", category: "standard" },
+  { src: "/assets/photos/gmail-recent-pxl_20251020_185711682-mp.jpg", alt: "Heavy machinery glass preparation", category: "heavy-machinery" },
   
   // Classics
   { src: "/assets/photos/drive-classic-img-0013.webp", alt: "Classic GMC windshield restoration", category: "classics" },

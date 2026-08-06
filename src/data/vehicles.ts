@@ -16,7 +16,6 @@ export const VEHICLES = {
       "/assets/photos/PXL_20260406_180917743.jpg",
       "/assets/photos/PXL_20260406_180922302.jpg",
       "/assets/photos/PXL_20260406_181952690.jpg",
-      "/assets/photos/gmail-recent-pxl_20251020_185711682-mp.jpg",
       "/assets/photos/standard-4.jpg",
       "/assets/photos/standard-5.jpg",
       "/assets/photos/work-action-2.jpg",
@@ -155,6 +154,7 @@ export const VEHICLES = {
       "/assets/photos/gmail-heavy-1000042057.jpg",
       "/assets/photos/gmail-heavy-1000042058.jpg",
       "/assets/photos/gmail-heavy-1000042060.jpg",
+      "/assets/photos/gmail-recent-pxl_20251020_185711682-mp.jpg",
     ],
     description: "CBA Glass specializes in glass replacement for heavy equipment and construction machinery. CAT, John Deere, Komatsu, and more — we come to your job site so the work doesn't stop.",
     content: "Broken glass on heavy equipment is a safety hazard and a productivity killer. Our technicians are experienced with the unique glass requirements of excavators, loaders, bulldozers, forklifts, and agricultural equipment. We bring everything to your location — job site, yard, or facility — and get you back to work fast."
