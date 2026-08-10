@@ -85,6 +85,7 @@ export default function QuotePopup() {
           message: formData.message || "Popup quote request",
           source: "30-second CTA popup",
           consent: formData.consent,
+          quoteType: "standard",
         }),
       });
 

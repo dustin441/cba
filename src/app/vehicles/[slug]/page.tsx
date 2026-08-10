@@ -157,7 +157,7 @@ export default async function VehiclePage({ params }: { params: Promise<{ slug: 
           </div>
         </section>
 
-        <Contact />
+        <Contact quoteType={slug === "rv" ? "rv" : "standard"} />
       </main>
       <Footer />
     </>

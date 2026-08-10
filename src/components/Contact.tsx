@@ -31,7 +31,11 @@ const INSURANCE_PROVIDERS = [
   "Other / I'll specify",
 ];
 
-export default function Contact() {
+type ContactProps = {
+  quoteType?: "standard" | "rv";
+};
+
+export default function Contact({ quoteType = "standard" }: ContactProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
   
@@ -95,6 +99,7 @@ export default function Contact() {
           email,
           message,
           consent,
+          quoteType,
         }),
       });
 

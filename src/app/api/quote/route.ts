@@ -13,6 +13,9 @@ const HIGHLEVEL_LOCATION_ID =
 const HIGHLEVEL_QUOTE_WORKFLOW_ID =
   process.env.HIGHLEVEL_QUOTE_WORKFLOW_ID ??
   "87c6c907-11ff-40d3-b2e7-dc894fad9412";
+const HIGHLEVEL_RV_QUOTE_WORKFLOW_ID =
+  process.env.HIGHLEVEL_RV_QUOTE_WORKFLOW_ID ??
+  "c895b79d-7307-4e18-8fc0-88e05cfd6934";
 
 const CUSTOM_FIELD_IDS = {
   year: "1d1ukfiUsvDdgqGCRwaA",
@@ -34,6 +37,7 @@ type QuotePayload = {
   message?: string;
   source?: string;
   consent?: boolean;
+  quoteType?: "standard" | "rv";
 };
 
 function isNonEmpty(value: unknown): value is string {
@@ -75,8 +79,12 @@ async function readBoundedJsonBody(request: Request): Promise<unknown> {
   return JSON.parse(body);
 }
 
-async function enrollContactInWorkflow(contactId: string, token: string) {
-  const url = `${HIGHLEVEL_API_BASE}/contacts/${contactId}/workflow/${HIGHLEVEL_QUOTE_WORKFLOW_ID}`;
+async function enrollContactInWorkflow(
+  contactId: string,
+  token: string,
+  workflowId: string
+) {
+  const url = `${HIGHLEVEL_API_BASE}/contacts/${contactId}/workflow/${workflowId}`;
 
   for (let attempt = 0; attempt < 2; attempt += 1) {
     try {
@@ -154,6 +162,7 @@ export async function POST(request: Request) {
     "insuranceProvider",
     "message",
     "source",
+    "quoteType",
   ];
   const invalidTypes = stringFields.filter(
     (field) => candidate[field] !== undefined && typeof candidate[field] !== "string"
@@ -175,6 +184,17 @@ export async function POST(request: Request) {
   ) {
     return NextResponse.json(
       { error: "Invalid billing type." },
+      { status: 400 }
+    );
+  }
+
+  if (
+    candidate.quoteType !== undefined &&
+    candidate.quoteType !== "standard" &&
+    candidate.quoteType !== "rv"
+  ) {
+    return NextResponse.json(
+      { error: "Invalid quote type." },
       { status: 400 }
     );
   }
@@ -231,10 +251,15 @@ export async function POST(request: Request) {
   }
 
   const { firstName, lastName } = splitName(payload.name ?? "");
-  const source =
-    payload.source === "30-second CTA popup"
+  const isRvQuote = payload.quoteType === "rv";
+  const source = isRvQuote
+    ? "CBA Website RV Quote Wizard"
+    : payload.source === "30-second CTA popup"
       ? "CBA Website Quote Popup"
       : "CBA Website Quote Wizard";
+  const workflowId = isRvQuote
+    ? HIGHLEVEL_RV_QUOTE_WORKFLOW_ID
+    : HIGHLEVEL_QUOTE_WORKFLOW_ID;
   const paymentLabel = payload.billingType
     ? payload.billingType === "insurance"
       ? "Insurance"
@@ -251,6 +276,7 @@ export async function POST(request: Request) {
     payload.message ? `Message: ${payload.message}` : null,
     vehicle ? `Vehicle: ${vehicle}` : null,
     `Source: ${source}`,
+    `Quote type: ${isRvQuote ? "RV" : "Standard"}`,
     "Communication consent: Yes",
     `Consent timestamp UTC: ${consentTimestamp}`,
     `Consent disclosure version: ${CONSENT_DISCLOSURE_VERSION}`,
@@ -337,7 +363,11 @@ export async function POST(request: Request) {
     );
   }
 
-  const workflowEnrollment = await enrollContactInWorkflow(contactId, token);
+  const workflowEnrollment = await enrollContactInWorkflow(
+    contactId,
+    token,
+    workflowId
+  );
   if (!workflowEnrollment.ok) {
     console.error("HighLevel quote workflow enrollment failed", {
       status: workflowEnrollment.status,
