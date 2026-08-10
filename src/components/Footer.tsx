@@ -55,6 +55,7 @@ export default function Footer() {
         <div className={styles.bottom}>
           <p className={styles.copy}>
             © {new Date().getFullYear()} CBA Glass. All rights reserved.
+            {" "}<Link href="/terms">Terms</Link> · <Link href="/privacy">Privacy</Link>
           </p>
           <p className={styles.safety}>
             Windshields account for ~40% of your vehicle&apos;s crash absorption.
