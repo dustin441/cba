@@ -182,6 +182,29 @@
   font-size: var(--text-lg);
 }
 
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.consent input {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--accent-primary);
+  flex: 0 0 auto;
+}
+
+.consent a {
+  color: var(--accent-primary);
+  text-decoration: underline;
+}
+
 .submitError {
   margin: 0 0 var(--space-md);
   padding: var(--space-md);

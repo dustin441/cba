@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import Link from "next/link";
 import {
   Phone,
   Mail,
@@ -15,6 +16,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./Contact.module.css";
+import { CONSENT_DISCLOSURE } from "@/lib/consent";
 
 const INSURANCE_PROVIDERS = [
   "State Farm",
@@ -44,6 +46,7 @@ export default function Contact() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [consent, setConsent] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
@@ -91,6 +94,7 @@ export default function Contact() {
           phone,
           email,
           message,
+          consent,
         }),
       });
 
@@ -112,7 +116,11 @@ export default function Contact() {
   // Helper validation functions
   const isStep1Valid = year.trim() !== "" && make.trim() !== "" && model.trim() !== "";
   const isStep2Valid = billingType !== null && (billingType !== "insurance" || insuranceProvider !== "");
-  const isStep3Valid = name.trim() !== "" && phone.trim() !== "" && email.trim() !== "";
+  const isStep3Valid =
+    name.trim() !== "" &&
+    phone.trim() !== "" &&
+    email.trim() !== "" &&
+    consent;
 
   return (
     <section
@@ -223,6 +231,7 @@ export default function Contact() {
                     setPhone("");
                     setEmail("");
                     setMessage("");
+                    setConsent(false);
                     setSubmitError("");
                     setIsSubmitted(false);
                   }}
@@ -485,6 +494,18 @@ export default function Contact() {
                             className={styles.formTextarea}
                           />
                         </div>
+
+                        <label className={styles.consent}>
+                          <input
+                            required
+                            type="checkbox"
+                            checked={consent}
+                            onChange={(event) => setConsent(event.target.checked)}
+                          />
+                          <span>
+                            {CONSENT_DISCLOSURE} See our <Link href="/terms">Terms</Link> and <Link href="/privacy">Privacy Policy</Link>.
+                          </span>
+                        </label>
 
                         {submitError && (
                           <p className={styles.submitError} role="alert">

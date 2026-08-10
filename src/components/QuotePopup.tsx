@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { ArrowRight, CheckCircle2, Phone, X } from "lucide-react";
 import styles from "./QuotePopup.module.css";
+import { CONSENT_DISCLOSURE } from "@/lib/consent";
 
 const POPUP_DELAY_MS = 30_000;
 const STORAGE_KEY = "cba_quote_popup_dismissed";
@@ -18,6 +20,7 @@ export default function QuotePopup() {
     email: "",
     vehicle: "",
     message: "",
+    consent: false,
   });
 
   useEffect(() => {
@@ -64,21 +67,24 @@ export default function QuotePopup() {
     setIsSubmitting(true);
 
     try {
-      const [year = "", make = "", ...modelParts] = formData.vehicle.trim().split(/\s+/);
+      const vehicleParts = formData.vehicle.trim().split(/\s+/).filter(Boolean);
+      const hasYear = /^\d{4}$/.test(vehicleParts[0] ?? "");
+      const year = hasYear ? vehicleParts[0] : "";
+      const make = vehicleParts[hasYear ? 1 : 0] ?? "";
+      const model = vehicleParts.slice(hasYear ? 2 : 1).join(" ");
       const response = await fetch("/api/quote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           year,
           make,
-          model: modelParts.join(" ") || formData.vehicle,
-          billingType: null,
-          insuranceProvider: "",
+          model,
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
           message: formData.message || "Popup quote request",
           source: "30-second CTA popup",
+          consent: formData.consent,
         }),
       });
 
@@ -188,6 +194,23 @@ export default function QuotePopup() {
                     placeholder="Windshield, side glass, RV, calibration, insurance question..."
                     rows={3}
                   />
+                </label>
+
+                <label className={styles.consent}>
+                  <input
+                    required
+                    type="checkbox"
+                    checked={formData.consent}
+                    onChange={(event) =>
+                      setFormData((current) => ({
+                        ...current,
+                        consent: event.target.checked,
+                      }))
+                    }
+                  />
+                  <span>
+                    {CONSENT_DISCLOSURE} See our <Link href="/terms">Terms</Link> and <Link href="/privacy">Privacy Policy</Link>.
+                  </span>
                 </label>
 
                 {submitError && <p className={styles.error}>{submitError}</p>}

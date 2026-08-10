@@ -1,0 +1,57 @@
+.page {
+  min-height: 100vh;
+  padding: var(--space-4xl) 0;
+  background:
+    radial-gradient(circle at top left, rgba(34, 211, 238, 0.12), transparent 35%),
+    var(--bg-deep);
+}
+
+.card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  background: rgba(15, 23, 42, 0.82);
+  box-shadow: var(--shadow-card);
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: var(--space-xl);
+  color: var(--accent-primary);
+  font-weight: 700;
+}
+
+.card h1 {
+  margin-bottom: var(--space-sm);
+  font-size: clamp(var(--text-3xl), 6vw, var(--text-5xl));
+}
+
+.updated {
+  margin-bottom: var(--space-2xl);
+  color: var(--text-muted);
+}
+
+.card section + section {
+  margin-top: var(--space-xl);
+}
+
+.card h2 {
+  margin-bottom: var(--space-sm);
+  font-size: var(--text-xl);
+}
+
+.card p,
+.card li {
+  color: var(--text-muted);
+}
+
+.card ul {
+  padding-left: var(--space-xl);
+}
+
+.card a {
+  color: var(--accent-primary);
+  text-decoration: underline;
+}
