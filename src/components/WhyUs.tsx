@@ -123,7 +123,7 @@ export default function WhyUs() {
           <div className="section-label">Why Choose CBA</div>
           <h2 className="section-title">
             Trust Built Over{" "}
-            <span className="text-gradient">Two Decades</span>
+            <span className="text-gradient">Three Decades</span>
           </h2>
           <p className="section-description">
             Family-owned and locally operated. We treat every vehicle like it&apos;s

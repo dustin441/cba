@@ -5,7 +5,7 @@ import styles from "./TrustBadges.module.css";
 
 const BADGES = [
   "LOCALLY OWNED & OPERATED",
-  "OVER 20 YEARS EXPERIENCE",
+  "OVER 30 YEARS EXPERIENCE",
   "YELP 5-STAR RATED",
   "BBB A+ RATED",
   "DOW CERTIFIED",
