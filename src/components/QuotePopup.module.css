@@ -1,4 +1,12 @@
 .overlay {
+  width: 100%;
+  max-width: none;
+  height: 100svh;
+  max-height: none;
+  margin: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
   position: fixed;
   inset: 0;
   z-index: 3000;
@@ -43,13 +51,13 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--glass-border);
-  color: var(--text-main);
+  background: rgb(15, 23, 42);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
 }
 
 .close:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgb(30, 41, 59);
 }
 
 .content {
