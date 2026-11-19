@@ -16,6 +16,15 @@ require.extensions['.tsx'] = require.extensions['.ts'] = (module, filename) => {
 const standard = 'g6ZbBzkJ8UoG66SlyX7P';
 const rv = 'BrRXsepTbATAcuEXreoT';
 
+test('successful native submissions land on a real confirmation page, not another quote form', () => {
+  const config = require(path.join(root, 'next.config.ts')).default;
+  const ThankYou = require(path.join(root, 'src/app/thank-you/page.tsx')).default;
+  const html = renderToStaticMarkup(React.createElement(ThankYou));
+  assert.match(html, /We received your quote request/);
+  assert.doesNotMatch(html, /widget\/form\/|<form[ >]/);
+  return config.redirects().then(redirects => assert.equal(redirects.some(r => r.source === '/thank-you'), false));
+});
+
 test('legacy token-dependent quote API and exclusive bot protection initialization are retired', () => {
   assert.equal(fs.existsSync(path.join(root, 'src/app/api/quote/route.ts')), false, 'Legacy quote route must not remain reachable');
   assert.equal(fs.existsSync(path.join(root, 'src/instrumentation-client.ts')), false);

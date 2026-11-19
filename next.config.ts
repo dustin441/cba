@@ -49,11 +49,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/thank-you",
-        destination: "/#contact",
-        permanent: true,
-      },
-      {
         source: "/vehicles/foreign",
         destination: "/vehicles/luxury",
         permanent: true,
